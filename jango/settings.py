@@ -64,7 +64,7 @@ ROOT_URLCONF = 'jango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templetes'), os.path.join(BASE_DIR, 'accountapp/templetes/accountapp')],
+        'DIRS': [os.path.join(BASE_DIR, 'templetes'), os.path.join(BASE_DIR, 'accountapp/templetes/accountapp'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
