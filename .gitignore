@@ -83,4 +83,6 @@ db.sqlite3
 
 .env
 
-.idea/vcs.xml
+__pycache__/
+
+.idea/
