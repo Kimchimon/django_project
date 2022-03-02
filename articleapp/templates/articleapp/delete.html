@@ -10,11 +10,16 @@
             <h4>
                 Do you want to delete {{ target_article.title }} ?
             </h4>
+            <img src="{{ target_article.image.url }}" alt="" style="height: 70%; width: 70%; margin-top: 2rem; border-radious: 3rem;">
         </div>
         <form action="{% url 'articleapp:delete' pk=target_article.pk %}" method="post">
             {% csrf_token %}
             <input type="submit" class="btn btn-danger rounded-pill col-4 mt-4">
         </form>
+        <a href="{% url 'articleapp:detail' pk=target_article.pk %}"
+          class="btn btn-primary rounded-pill col-4 mt-4">
+              Cancel
+        </a>
     </div>
 
 {% endblock %}

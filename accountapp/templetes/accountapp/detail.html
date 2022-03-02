@@ -10,11 +10,11 @@
 
       <h2 style="font-family: 'NanumSquare';">
         {{ target_user.profile.nickname }}
-          {% if target.user == user %}
+        {% if target_user == user %}
           <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
               Edit
           </a>
-          {% endif %}
+        {% endif %}
       </h2>
 
       <h5 style="margin-bottom: 3rem">
@@ -22,7 +22,7 @@
       </h5>
 
       {% else %}
-        {% if target.user == user %}
+        {% if target_user == user %}
         <a href="{% url 'profileapp:create' %}">
           <h2 style="font-family: 'NanumSquare';">
             Create Profile
