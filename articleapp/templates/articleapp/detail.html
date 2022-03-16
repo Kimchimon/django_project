@@ -2,8 +2,8 @@
 
 {% block content %}
 
-  <div style="text-align:center">
-      <div>
+  <div style="text-align:center;">
+      <div style="max-width: 450px; margin: 4rem auto;">
           <h1>
               {{ target_article.title }}
           </h1>
@@ -12,11 +12,11 @@
           </h5>
           <hr>
 
-          <img src="{{ target_article.image.url }}" alt="" style="height: 40%; width: 40%; margin: 2rem; border-radious: 3rem;">
+          <img src="{{ target_article.image.url }}" alt="" style="height: 100%; width: 100%; margin: 2rem 0; border-radius: 1rem;">
 
-          <p style="margin-bottom:2rem;">
-              {{ target_article.content }}
-          </p>
+          <div class="text-start">
+              {{ target_article.content | safe }}
+          </div>
 
 
           {% if target_article.writer == user %}

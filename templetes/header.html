@@ -28,6 +28,9 @@
         <a href="{% url 'projectapp:list' %}" class="yoon_header_nav">
             <span>Project</span>
         </a>
+        <a href="{% url 'subscribeapp:list' %}" class="yoon_header_nav">
+            <span>Subscription</span>
+        </a>
         {% if not user.is_authenticated %}
         <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="yoon_header_nav">
             <span>Login</span>

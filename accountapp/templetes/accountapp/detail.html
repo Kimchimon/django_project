@@ -3,14 +3,22 @@
 {% block content %}
 
   <div>
-    <div style="text-align:center; max-width:350px; margin: 4rem auto">
+    <div style="text-align:center; max-width:500px; margin: 4rem auto;">
       {% if target_user.profile %}
       <img src="{{ target_user.profile.image.url }}" alt=""
            style="height: 12rem; width: 12rem; border-radius: 20rem; margin-bottom: 2rem; object-fit: cover;">
 
       <h2 style="font-family: 'NanumSquare';">
         {{ target_user.profile.nickname }}
+        {% if target_user == user %}
+        <a class="material-icons"
+         style=""
+         href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+          edit
+        </a>
+        {% endif %}
       </h2>
+
 
       <h5 style="margin-bottom: 3rem">
         {{ target_user.profile.message }}
@@ -31,20 +39,15 @@
       {% endif %}
 
       {% if target_user == user %}
-      <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
-          <p>
-            Edit
-          </p>
+      <a class="material-icons"
+         style="padding:.2rem;"
+         href="{% url 'accountapp:update' pk=user.pk %}">
+          settings
       </a>
-      <a href="{% url 'accountapp:update' pk=user.pk %}">
-        <p>
-          Change Info
-        </p>
-      </a>
-      <a href="{% url 'accountapp:delete' pk=user.pk %}">
-        <p>
-          Delete account
-        </p>
+      <a class="material-icons"
+         style="color: red; padding:.2rem;"
+         href="{% url 'accountapp:delete' pk=user.pk %}">
+          cancel
       </a>
       <hr>
       {% endif %}
